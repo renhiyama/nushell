@@ -336,7 +336,10 @@ libc = { git = "https://github.com/renhiyama/libc", branch = "libc-0.2" }
 nix = { git = "https://github.com/renhiyama/nix", branch = "runixos-0.29" }
 errno = { git = "https://github.com/renhiyama/rust-errno", branch = "runixos" }
 rustix = { git = "https://github.com/renhiyama/rustix" }
-getrandom = { git = "https://github.com/renhiyama/getrandom", branch = "runixos" }
+getrandom_02 = { package = "getrandom", path = "patches/getrandom-v02" }
+getrandom_03 = { package = "getrandom", path = "patches/getrandom-v03" }
+getrandom_04 = { package = "getrandom", path = "patches/getrandom-v04" }
+nix_031 = { package = "nix", path = "patches/nix-v031" }
 
 # Run all benchmarks with `cargo bench`
 # Run individual benchmarks like `cargo bench -- <regex>` e.g. `cargo bench -- parse`
