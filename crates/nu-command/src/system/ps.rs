@@ -4,7 +4,7 @@ use chrono::{Local, TimeZone};
 use itertools::Itertools;
 use nu_engine::command_prelude::*;
 
-#[cfg(target_os = "linux")]
+#[cfg(any(target_os = "linux", target_os = "runixos"))]
 use procfs::WithCurrentSystemInfo;
 use std::time::Duration;
 
@@ -105,7 +105,7 @@ fn run_ps(
 
         if long {
             record.push("command", Value::string(proc.command(), span));
-            #[cfg(target_os = "linux")]
+            #[cfg(any(target_os = "linux", target_os = "runixos"))]
             {
                 let proc_stat = proc
                     .curr_proc

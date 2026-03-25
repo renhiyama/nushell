@@ -332,6 +332,10 @@ bench = false
 [patch.crates-io]
 # reedline = { git = "https://github.com/nushell/reedline", branch = "main" }
 # nu-ansi-term = {git = "https://github.com/nushell/nu-ansi-term.git", branch = "main"}
+libc = { git = "https://github.com/renhiyama/libc", branch = "libc-0.2" }
+nix = { git = "https://github.com/renhiyama/nix", branch = "runixos-0.29" }
+errno = { git = "https://github.com/renhiyama/rust-errno", branch = "runixos" }
+rustix = { git = "https://github.com/renhiyama/rustix" }
 
 # Run all benchmarks with `cargo bench`
 # Run individual benchmarks like `cargo bench -- <regex>` e.g. `cargo bench -- parse`

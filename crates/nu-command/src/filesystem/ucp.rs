@@ -145,9 +145,9 @@ impl Command for UCp {
         } else {
             uu_cp::OverwriteMode::Clobber(uu_cp::ClobberMode::Standard)
         };
-        #[cfg(any(target_os = "linux", target_os = "android", target_os = "macos"))]
+        #[cfg(any(target_os = "linux", target_os = "runixos", target_os = "android", target_os = "macos"))]
         let reflink_mode = uu_cp::ReflinkMode::Auto;
-        #[cfg(not(any(target_os = "linux", target_os = "android", target_os = "macos")))]
+        #[cfg(not(any(target_os = "linux", target_os = "runixos", target_os = "android", target_os = "macos")))]
         let reflink_mode = uu_cp::ReflinkMode::Never;
         let mut paths = call.rest::<Spanned<NuGlob>>(engine_state, stack, 0)?;
         if paths.is_empty() {
@@ -294,7 +294,7 @@ fn make_attributes(preserve: Option<Value>) -> Result<uu_cp::Attributes, ShellEr
     if let Some(preserve) = preserve {
         let mut attributes = uu_cp::Attributes {
             #[cfg(any(
-                target_os = "linux",
+                target_os = "linux", target_os = "runixos",
                 target_os = "freebsd",
                 target_os = "android",
                 target_os = "macos",
@@ -316,7 +316,7 @@ fn make_attributes(preserve: Option<Value>) -> Result<uu_cp::Attributes, ShellEr
         Ok(uu_cp::Attributes {
             mode: ATTR_SET,
             #[cfg(any(
-                target_os = "linux",
+                target_os = "linux", target_os = "runixos",
                 target_os = "freebsd",
                 target_os = "android",
                 target_os = "macos",
@@ -359,7 +359,7 @@ fn parse_and_set_attribute(
             let attribute = match val.as_str() {
                 "mode" => &mut attribute.mode,
                 #[cfg(any(
-                    target_os = "linux",
+                    target_os = "linux", target_os = "runixos",
                     target_os = "freebsd",
                     target_os = "android",
                     target_os = "macos",

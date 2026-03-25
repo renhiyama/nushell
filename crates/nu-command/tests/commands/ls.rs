@@ -614,7 +614,7 @@ fn list_a_directory_not_exists() {
     })
 }
 
-#[cfg(any(target_os = "linux", target_os = "freebsd"))]
+#[cfg(any(target_os = "linux", target_os = "runixos", target_os = "freebsd"))]
 #[test]
 fn list_directory_contains_invalid_utf8() {
     use std::ffi::OsStr;

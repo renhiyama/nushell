@@ -5,7 +5,7 @@ mod util;
 
 #[cfg(target_os = "freebsd")]
 mod freebsd;
-#[cfg(any(target_os = "android", target_os = "linux"))]
+#[cfg(any(target_os = "android", target_os = "linux", target_os = "runixos"))]
 mod linux;
 #[cfg(target_os = "macos")]
 mod macos;
@@ -26,7 +26,7 @@ pub use self::util::*;
 
 #[cfg(target_os = "freebsd")]
 pub use self::freebsd::*;
-#[cfg(any(target_os = "android", target_os = "linux"))]
+#[cfg(any(target_os = "android", target_os = "linux", target_os = "runixos"))]
 pub use self::linux::*;
 #[cfg(target_os = "macos")]
 pub use self::macos::*;

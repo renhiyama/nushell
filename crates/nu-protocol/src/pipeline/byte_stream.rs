@@ -1262,7 +1262,7 @@ pub fn copy_with_signals(
             }
         }
     } else {
-        // #[cfg(any(target_os = "linux", target_os = "android"))]
+        // #[cfg(any(target_os = "linux", target_os = "runixos", target_os = "android"))]
         // {
         //     return crate::sys::kernel_copy::copy_spec(reader, writer);
         // }

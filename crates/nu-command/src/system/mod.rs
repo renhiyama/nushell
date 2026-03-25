@@ -3,7 +3,7 @@ mod exec;
 mod nu_check;
 #[cfg(any(
     target_os = "android",
-    target_os = "linux",
+    target_os = "linux", target_os = "runixos",
     target_os = "freebsd",
     target_os = "netbsd",
     target_os = "openbsd",
@@ -23,7 +23,7 @@ pub use exec::Exec;
 pub use nu_check::NuCheck;
 #[cfg(any(
     target_os = "android",
-    target_os = "linux",
+    target_os = "linux", target_os = "runixos",
     target_os = "freebsd",
     target_os = "netbsd",
     target_os = "openbsd",

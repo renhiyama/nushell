@@ -434,16 +434,16 @@ fn mv_change_case_of_directory() {
             .map(|de| de.unwrap().file_name().to_string_lossy().into_owned())
             .collect();
 
-        #[cfg(any(target_os = "linux", target_os = "freebsd"))]
+        #[cfg(any(target_os = "linux", target_os = "runixos", target_os = "freebsd"))]
         assert!(
             !_files_in_test_directory.contains(&original_dir)
                 && _files_in_test_directory.contains(&new_dir)
         );
 
-        #[cfg(any(target_os = "linux", target_os = "freebsd"))]
+        #[cfg(any(target_os = "linux", target_os = "runixos", target_os = "freebsd"))]
         assert!(files_exist_at(&["somefile.txt"], dirs.test().join(new_dir)));
 
-        #[cfg(not(any(target_os = "linux", target_os = "freebsd")))]
+        #[cfg(not(any(target_os = "linux", target_os = "runixos", target_os = "freebsd")))]
         _actual.err.contains("to a subdirectory of itself");
     })
 }
@@ -469,12 +469,12 @@ fn mv_change_case_of_file() {
             .unwrap()
             .map(|de| de.unwrap().file_name().to_string_lossy().into_owned())
             .collect();
-        #[cfg(any(target_os = "linux", target_os = "freebsd"))]
+        #[cfg(any(target_os = "linux", target_os = "runixos", target_os = "freebsd"))]
         assert!(
             !_files_in_test_directory.contains(&original_file_name)
                 && _files_in_test_directory.contains(&new_file_name)
         );
-        #[cfg(not(any(target_os = "linux", target_os = "freebsd")))]
+        #[cfg(not(any(target_os = "linux", target_os = "runixos", target_os = "freebsd")))]
         _actual.err.contains("are the same file");
     })
 }

@@ -176,7 +176,7 @@ pub fn add_shell_command_context(mut engine_state: EngineState) -> EngineState {
             feature = "os",
             any(
                 target_os = "android",
-                target_os = "linux",
+                target_os = "linux", target_os = "runixos",
                 target_os = "freebsd",
                 target_os = "netbsd",
                 target_os = "openbsd",

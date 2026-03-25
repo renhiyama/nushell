@@ -58,12 +58,12 @@ pub mod users {
         Gid::current()
     }
 
-    #[cfg(not(any(target_os = "linux", target_os = "freebsd", target_os = "android")))]
+    #[cfg(not(any(target_os = "linux", target_os = "runixos", target_os = "freebsd", target_os = "android")))]
     pub fn get_current_username() -> Option<String> {
         get_user_by_uid(get_current_uid()).map(|user| user.name)
     }
 
-    #[cfg(any(target_os = "linux", target_os = "freebsd", target_os = "android"))]
+    #[cfg(any(target_os = "linux", target_os = "runixos", target_os = "freebsd", target_os = "android"))]
     pub fn current_user_groups() -> Option<Vec<Gid>> {
         if let Ok(mut groups) = nix::unistd::getgroups() {
             groups.sort_unstable_by_key(|id| id.as_raw());
@@ -89,7 +89,7 @@ pub mod users {
     ///     println!("User is a member of group #{group}");
     /// }
     /// ```
-    #[cfg(not(any(target_os = "linux", target_os = "freebsd", target_os = "android")))]
+    #[cfg(not(any(target_os = "linux", target_os = "runixos", target_os = "freebsd", target_os = "android")))]
     pub fn get_user_groups(username: &str, gid: Gid) -> Option<Vec<Gid>> {
         use nix::libc::{c_int, gid_t};
         use std::ffi::CString;

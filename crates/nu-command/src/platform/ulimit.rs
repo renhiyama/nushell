@@ -78,7 +78,7 @@ static RESOURCE_ARRAY: LazyLock<Vec<ResourceInfo>> = LazyLock::new(|| {
             1024,
             Resource::RLIMIT_DATA,
         ),
-        #[cfg(any(target_os = "android", target_os = "linux"))]
+        #[cfg(any(target_os = "android", target_os = "linux", target_os = "runixos"))]
         (
             "nice",
             "Controls of maximum nice priority",
@@ -93,7 +93,7 @@ static RESOURCE_ARRAY: LazyLock<Vec<ResourceInfo>> = LazyLock::new(|| {
             1024,
             Resource::RLIMIT_FSIZE,
         ),
-        #[cfg(any(target_os = "android", target_os = "linux"))]
+        #[cfg(any(target_os = "android", target_os = "linux", target_os = "runixos"))]
         (
             "pending-signals",
             "Maximum number of pending signals",
@@ -105,7 +105,7 @@ static RESOURCE_ARRAY: LazyLock<Vec<ResourceInfo>> = LazyLock::new(|| {
             target_os = "android",
             target_os = "freebsd",
             target_os = "openbsd",
-            target_os = "linux",
+            target_os = "linux", target_os = "runixos",
             target_os = "freebsd",
             target_os = "netbsd"
         ))]
@@ -121,7 +121,7 @@ static RESOURCE_ARRAY: LazyLock<Vec<ResourceInfo>> = LazyLock::new(|| {
             target_os = "freebsd",
             target_os = "netbsd",
             target_os = "openbsd",
-            target_os = "linux",
+            target_os = "linux", target_os = "runixos",
             target_os = "freebsd",
             target_os = "aix",
         ))]
@@ -139,7 +139,7 @@ static RESOURCE_ARRAY: LazyLock<Vec<ResourceInfo>> = LazyLock::new(|| {
             1,
             Resource::RLIMIT_NOFILE,
         ),
-        #[cfg(any(target_os = "android", target_os = "linux"))]
+        #[cfg(any(target_os = "android", target_os = "linux", target_os = "runixos"))]
         (
             "queue-size",
             "Maximum bytes in POSIX message queues",
@@ -147,7 +147,7 @@ static RESOURCE_ARRAY: LazyLock<Vec<ResourceInfo>> = LazyLock::new(|| {
             1024,
             Resource::RLIMIT_MSGQUEUE,
         ),
-        #[cfg(any(target_os = "android", target_os = "linux"))]
+        #[cfg(any(target_os = "android", target_os = "linux", target_os = "runixos"))]
         (
             "realtime-priority",
             "Maximum realtime scheduling priority",
@@ -174,7 +174,7 @@ static RESOURCE_ARRAY: LazyLock<Vec<ResourceInfo>> = LazyLock::new(|| {
             target_os = "freebsd",
             target_os = "netbsd",
             target_os = "openbsd",
-            target_os = "linux",
+            target_os = "linux", target_os = "runixos",
             target_os = "freebsd",
             target_os = "aix",
         ))]
@@ -201,7 +201,7 @@ static RESOURCE_ARRAY: LazyLock<Vec<ResourceInfo>> = LazyLock::new(|| {
             1024,
             Resource::RLIMIT_SWAP,
         ),
-        #[cfg(any(target_os = "android", target_os = "linux"))]
+        #[cfg(any(target_os = "android", target_os = "linux", target_os = "runixos"))]
         (
             "file-locks",
             "Maximum number of file locks",
@@ -209,7 +209,7 @@ static RESOURCE_ARRAY: LazyLock<Vec<ResourceInfo>> = LazyLock::new(|| {
             1,
             Resource::RLIMIT_LOCKS,
         ),
-        #[cfg(target_os = "linux")]
+        #[cfg(any(target_os = "linux", target_os = "runixos"))]
         (
             "realtime-maxtime",
             "Maximum contiguous realtime CPU time",

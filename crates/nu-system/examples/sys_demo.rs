@@ -1,7 +1,7 @@
 fn main() {
     #[cfg(any(
         target_os = "android",
-        target_os = "linux",
+        target_os = "linux", target_os = "runixos",
         target_os = "macos",
         target_os = "windows"
     ))]

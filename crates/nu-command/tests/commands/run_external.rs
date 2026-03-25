@@ -313,7 +313,7 @@ fn external_command_url_args(prefix: &str) {
 
 #[apply(run_external_prefixes)]
 #[cfg_attr(
-    not(target_os = "linux"),
+    not(any(target_os = "linux", target_os = "runixos")),
     ignore = "only runs on Linux, where controlling the HOME var is reliable"
 )]
 fn external_command_expand_tilde(prefix: &str) {
