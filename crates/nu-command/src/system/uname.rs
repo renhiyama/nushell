@@ -51,13 +51,19 @@ impl Command for UName {
             help: None,
             inner: Vec::new(),
         })?;
+        // Override OS name for RunixOS
+        let os = if cfg!(target_os = "runixos") {
+            output.os.map(|_| "RunixOS".to_string())
+        } else {
+            output.os
+        };
         let outputs = [
             output.kernel_name,
             output.nodename,
             output.kernel_release,
             output.kernel_version,
             output.machine,
-            output.os,
+            os,
         ];
         let outputs = outputs
             .iter()
