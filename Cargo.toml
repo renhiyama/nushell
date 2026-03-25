@@ -342,6 +342,10 @@ getrandom_04 = { package = "getrandom", path = "patches/getrandom-v04" }
 nix_031 = { package = "nix", path = "patches/nix-v031" }
 procfs = { path = "patches/procfs/procfs" }
 uzers = { git = "https://github.com/renhiyama/uzers-rs", branch = "runixos" }
+rlimit = { git = "https://github.com/renhiyama/rlimit", branch = "runixos" }
+tokio = { git = "https://github.com/renhiyama/tokio", branch = "runixos" }
+mio = { git = "https://github.com/renhiyama/mio" }
+socket2 = { git = "https://github.com/renhiyama/socket2" }
 
 # Run all benchmarks with `cargo bench`
 # Run individual benchmarks like `cargo bench -- <regex>` e.g. `cargo bench -- parse`
