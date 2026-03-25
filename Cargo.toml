@@ -345,6 +345,7 @@ uzers = { git = "https://github.com/renhiyama/uzers-rs", branch = "runixos" }
 rlimit = { git = "https://github.com/renhiyama/rlimit", branch = "runixos" }
 tokio = { git = "https://github.com/renhiyama/tokio", branch = "runixos" }
 rustix_038 = { package = "rustix", path = "patches/rustix-v038" }
+interprocess = { git = "https://github.com/renhiyama/interprocess", branch = "runixos" }
 mio = { git = "https://github.com/renhiyama/mio" }
 socket2 = { git = "https://github.com/renhiyama/socket2" }
 
