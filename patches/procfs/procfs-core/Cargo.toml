@@ -3,14 +3,14 @@ name = "procfs-core"
 documentation = "https://docs.rs/procfs-core/"
 description = "Data structures and parsing for the linux procfs pseudo-filesystem"
 readme = "../README.md"
-version.workspace = true
-authors.workspace = true
-repository.workspace = true
-keywords.workspace = true
-categories.workspace = true
-license.workspace = true
-edition.workspace = true
-rust-version.workspace = true
+version = "0.17.0"
+authors = ["Andrew Chin <achin@eminence32.net>"]
+repository = "https://github.com/eminence/procfs"
+keywords = ["procfs", "proc", "linux", "process"]
+categories = ["os::unix-apis", "filesystem"]
+license = "MIT OR Apache-2.0"
+edition = "2018"
+rust-version = "1.48"
 
 [features]
 default = ["chrono"]
