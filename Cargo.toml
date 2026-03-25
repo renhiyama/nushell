@@ -347,6 +347,7 @@ tokio = { git = "https://github.com/renhiyama/tokio", branch = "runixos" }
 rustix_038 = { package = "rustix", path = "patches/rustix-v038" }
 interprocess = { git = "https://github.com/renhiyama/interprocess", branch = "runixos" }
 ring = { git = "https://github.com/renhiyama/ring", branch = "runixos" }
+open = { git = "https://github.com/renhiyama/open-rs", branch = "runixos" }
 mio = { git = "https://github.com/renhiyama/mio" }
 socket2 = { git = "https://github.com/renhiyama/socket2" }
 
